@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="default">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <title>ClaritySpot | Tecnología clara</title>
@@ -27,11 +27,10 @@
       </div>
 
       <div class="nav-controls" style="display:flex;align-items:center;gap:.5rem;">
-        <!-- Selector de variantes de color -->
+        <!-- Selector de tema: sólo claro y oscuro -->
         <div class="theme-switcher" role="toolbar" aria-label="Seleccionar tema">
-          <button class="theme-swatch" data-theme="default" title="Tema por defecto" aria-pressed="true" aria-label="Tema por defecto"></button>
-          <button class="theme-swatch" data-theme="warm" title="Tema cálido" aria-pressed="false" aria-label="Tema cálido"></button>
-          <button class="theme-swatch" data-theme="neutral" title="Tema neutro" aria-pressed="false" aria-label="Tema neutro"></button>
+          <button class="theme-swatch" data-theme="light" title="Tema claro" aria-pressed="true" aria-label="Tema claro"></button>
+          <button class="theme-swatch" data-theme="dark" title="Tema oscuro" aria-pressed="false" aria-label="Tema oscuro"></button>
         </div>
 
         <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú">
@@ -66,7 +65,7 @@
       funcionalidad, compatibilidad y experiencia de uso.
       <br><br>
       Sin cuentos, sin precios inflados, sin falsas promesas.
-      Queremos que sepas exactamente qué estás comprando y por qué vale lo que vale.
+      Queremos que sepas exactamente qué you're buying y por qué vale lo que vale.
     </p>
   </section>
 
@@ -138,32 +137,43 @@
     navToggle.setAttribute('aria-expanded', String(!visible));
   });
 
-  // Theme switcher (guarda preferencia en localStorage)
+  // Theme switcher (guarda preferencia en localStorage). Only light and dark themes.
   const themeButtons = document.querySelectorAll('.theme-swatch');
   const root = document.documentElement;
   const THEME_KEY = 'clarityspot_theme';
 
+  function getSystemPreference() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
   function applyTheme(name) {
     root.setAttribute('data-theme', name);
-    // actualizar aria-pressed en botones
     themeButtons.forEach(btn => {
       const pressed = btn.getAttribute('data-theme') === name;
       btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
     });
   }
 
-  // Inicializar desde localStorage o atributo inicial
+  // Initialize: saved -> system -> attribute -> light
   const saved = localStorage.getItem(THEME_KEY);
-  if (saved) applyTheme(saved);
-  else applyTheme(root.getAttribute('data-theme') || 'default');
+  const initial = saved || getSystemPreference() || root.getAttribute('data-theme') || 'light';
+  applyTheme(initial);
 
   themeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const name = btn.getAttribute('data-theme');
       applyTheme(name);
-      localStorage.setItem(THEME_KEY, name);
+      try { localStorage.setItem(THEME_KEY, name); } catch(e) {}
     });
   });
+
+  // Keep in sync if system preference changes and user didn't save a preference
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      const saved = localStorage.getItem(THEME_KEY);
+      if (!saved) applyTheme(e.matches ? 'dark' : 'light');
+    });
+  }
 </script>
 
 </body>

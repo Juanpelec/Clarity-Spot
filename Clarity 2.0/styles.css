@@ -1,37 +1,30 @@
 :root{
-  /* Paleta por defecto (tema "default") */
+  /* Brand & light-theme defaults */
+  --brand: #0b1d33; /* main brand color (from previous file) */
+  --brand-contrast: #ffffff;
+  --brand-500: var(--brand);
+  --brand-400: #14405c;
+
   --bg: #ffffff;
   --text: #1e1e1e;
   --muted: #6b7280;
-  --brand: #0b1d33;
-  --brand-contrast: #ffffff;
-  --accent: #0f76ff;
+  --accent: var(--brand-500);
   --card-shadow: 0 12px 30px rgba(11,29,51,0.06);
   --radius: 12px;
   --gap: 1.25rem;
   --container: 1100px;
 }
 
-/* Tema cálido */
-:root[data-theme="warm"],
-[data-theme="warm"] {
-  --brand: #7a2e00;
-  --accent: #ff7a00;
-  --bg: #fffaf5;
-  --brand-contrast: #ffffff;
-  --text: #1f1f1f;
-  --muted: #6a5b4b;
-}
-
-/* Tema neutro/minimal */
-:root[data-theme="neutral"],
-[data-theme="neutral"] {
-  --brand: #0b6b6b;
-  --accent: #2aa198;
-  --bg: #fbfcfc;
-  --brand-contrast: #ffffff;
-  --text: #111827;
-  --muted: #51606a;
+/* Dark theme variables override */
+:root[data-theme="dark"], [data-theme="dark"] {
+  --bg: #0b0f14;
+  --text: #e6eef8;
+  --muted: #9aa6b2;
+  --brand-contrast: #0b0f14;
+  --brand-500: #2b9af3; /* fallback darker-tinted brand for visibility in dark */
+  --brand-400: #5fb6ff;
+  --accent: color-mix(in srgb, var(--brand-500) 60%, white 40%);
+  --card-shadow: 0 6px 20px rgba(2,6,23,0.6);
 }
 
 /* Reset / base */
@@ -135,21 +128,20 @@ body{
   width:28px;
   height:28px;
   border-radius:8px;
-  border:2px solid rgba(255,255,255,0.12);
+  border:2px solid rgba(0,0,0,0.06);
   padding:0;
   cursor:pointer;
   background:transparent;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 .theme-swatch[aria-pressed="true"]{
-  outline: 2px solid rgba(255,255,255,0.18);
+  outline: 2px solid rgba(0,0,0,0.12);
   transform: translateY(-2px);
 }
 
 /* Color indicators for swatches */
-.theme-swatch[data-theme="default"]{ background: linear-gradient(180deg, var(--brand), #14405c); }
-.theme-swatch[data-theme="warm"]{ background: linear-gradient(180deg, #ff7a00, #b04200); border-color: rgba(0,0,0,0.06); }
-.theme-swatch[data-theme="neutral"]{ background: linear-gradient(180deg, #2aa198, #0b6b6b); border-color: rgba(255,255,255,0.06); }
+.theme-swatch[data-theme="light"]{ background: linear-gradient(180deg, var(--brand), var(--brand-400)); }
+.theme-swatch[data-theme="dark"]{ background: linear-gradient(180deg, var(--brand-500), var(--brand-400)); border-color: rgba(255,255,255,0.06); }
 
 /* Nav toggle (mobile) */
 .nav-toggle{
