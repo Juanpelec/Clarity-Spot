@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="default">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos | ClaritySpot</title>
+  <meta name="description" content="Productos seleccionados por ClaritySpot: auriculares, cargadores, parlantes y accesorios confiables para el uso diario." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Productos | ClaritySpot" />
+  <meta property="og:description" content="Productos seleccionados por calidad y compatibilidad. Conocé nuestras opciones y consultanos por WhatsApp." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="sub-hero" role="banner">
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <div class="brand" style="display:flex;align-items:center;gap:.75rem;">
+        <!-- Espacio para logo de la marca -->
+        <a href="index.html" class="brand-link" aria-label="ClaritySpot - Inicio">
+          <img src="images/logo.svg" alt="ClaritySpot" class="brand-logo" width="44" height="44" onerror="this.style.display='none'">
+          <span class="brand-text">ClaritySpot</span>
+        </a>
+      </div>
+
+      <div class="nav-controls" style="display:flex;align-items:center;gap:.5rem;">
+        <div class="theme-switcher" role="toolbar" aria-label="Seleccionar tema">
+          <button class="theme-swatch" data-theme="default" title="Tema por defecto" aria-pressed="true" aria-label="Tema por defecto"></button>
+          <button class="theme-swatch" data-theme="warm" title="Tema cálido" aria-pressed="false" aria-label="Tema cálido"></button>
+          <button class="theme-swatch" data-theme="neutral" title="Tema neutro" aria-pressed="false" aria-label="Tema neutro"></button>
+        </div>
+
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div id="primary-navigation" class="nav-links" data-visible="false">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" aria-current="page">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sub-hero-content">
+    <h1>Productos seleccionados</h1>
+    <p>Tecnología confiable para el uso diario. Sin vueltas. Sin confusión.</p>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="products-grid" aria-live="polite">
+      <!-- PRODUCTO 1 -->
+      <article class="product-card" itemscope itemtype="http://schema.org/Product">
+        <picture>
+          <source srcset="images/claritypods-400.webp" type="image/webp">
+          <img src="images/claritypods-400.jpg" loading="lazy" alt="Auriculares inalámbricos ClarityPods" itemprop="image">
+        </picture>
+
+        <h3 itemprop="name">ClarityPods — Auriculares inalámbricos</h3>
+        <p class="product-desc" itemprop="description">
+          Compatibles con iPhone y Android. Conexión estable, sonido claro y batería para todo el día.
+        </p>
+        <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <span itemprop="priceCurrency" content="ARS">ARS</span>
+          <span itemprop="price" content="39900">39.900</span> <span class="currency">ARS</span>
+          <link itemprop="url" href="https://wa.me/5493813022084?text=Hola,%20quiero%20consultar%20por%20los%20ClarityPods.%20Uso%20iPhone/Android." />
+        </p>
+        <a 
+          href="https://wa.me/5493813022084?text=Hola,%20vengo%20de%20ClaritySpot%20y%20quiero%20consultar%20por%20los%20ClarityPods.%20Mi%20dispositivo%20es..."
+          class="btn primary"
+          target="_blank" rel="noopener"
+        >
+          Consultar disponibilidad
+        </a>
+      </article>
+
+      <!-- PRODUCTO 2 -->
+      <article class="product-card" itemscope itemtype="http://schema.org/Product">
+        <img src="images/charger-300.jpg" loading="lazy" alt="Cargador USB-C 20W" itemprop="image">
+        <h3 itemprop="name">Cargador USB-C 20W</h3>
+        <p class="product-desc" itemprop="description">Cargador confiable y compacto compatible con carga rápida en iPhone y Android.</p>
+        <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <span itemprop="priceCurrency" content="ARS">ARS</span>
+          <span itemprop="price" content="14900">14.900</span> <span class="currency">ARS</span>
+        </p>
+        <a 
+          href="https://wa.me/5493813022084?text=Hola,%20quiero%20consultar%20por%20el%20cargador%20USB-C%2020W.%20Mi%20celular%20es..."
+          class="btn primary"
+          target="_blank" rel="noopener"
+        >
+          Consultar disponibilidad
+        </a>
+      </article>
+
+      <!-- PRODUCTO 3 -->
+      <article class="product-card" itemscope itemtype="http://schema.org/Product">
+        <img src="images/speaker-300.jpg" loading="lazy" alt="Parlante Bluetooth portátil" itemprop="image">
+        <h3 itemprop="name">Parlante Bluetooth portátil</h3>
+        <p class="product-desc" itemprop="description">Compacto, con buen volumen y batería duradera. Fácil de usar en casa o en salidas.</p>
+        <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <span itemprop="priceCurrency" content="ARS">ARS</span>
+          <span itemprop="price" content="29900">29.900</span> <span class="currency">ARS</span>
+        </p>
+        <a 
+          href="https://wa.me/5493813022084?text=Hola,%20quiero%20consultar%20por%20el%20parlante%20Bluetooth."
+          class="btn primary"
+          target="_blank" rel="noopener"
+        >
+          Consultar disponibilidad
+        </a>
+      </article>
+
+      <!-- Agregá más productos siguiendo el mismo patrón -->
+    </div>
+  </section>
+
+  <section class="section light" id="contacto">
+    <h2>Querés ayuda para elegir?</h2>
+    <p>Podes escribirnos por WhatsApp o llamarnos. Te ayudamos a elegir según tu uso y presupuesto.</p>
+    <div class="buttons">
+      <a href="https://wa.me/5493813022084" class="btn secondary" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <a href="mailto:info@clarityspot.example" class="btn">Contactar por email</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <p><strong>ClaritySpot</strong> · Tecnología clara para el día a día.</p>
+    <p class="small">Tel: <a href="tel:+5493813022084">+54 9 381 302 2084</a></p>
+  </div>
+</footer>
+
+<!-- JSON-LD para SEO (ejemplo con los productos listados) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "ClaritySpot",
+      "url": ""
+    },
+    {
+      "@type": "Product",
+      "name": "ClarityPods — Auriculares inalámbricos",
+      "image": "https://tu-dominio.example/images/claritypods-400.jpg",
+      "description": "Compatibles con iPhone y Android. Conexión estable, sonido claro y batería para todo el día.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "ARS",
+        "price": "39900",
+        "availability": "https://schema.org/InStock",
+        "url": "https://wa.me/5493813022084?text=Hola,%20quiero%20consultar%20por%20los%20ClarityPods"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Cargador USB-C 20W",
+      "image": "https://tu-dominio.example/images/charger-300.jpg",
+      "description": "Cargador confiable y compacto compatible con carga rápida en iPhone y Android.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "ARS",
+        "price": "14900",
+        "availability": "https://schema.org/InStock",
+        "url": "https://wa.me/5493813022084?text=Hola,%20quiero%20consultar%20por%20el%20cargador%20USB-C%2020W"
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  // Reusar la misma función de navegación móvil
+  const navToggle = document.querySelectorAll('.nav-toggle');
+  navToggle.forEach(btn => {
+    const navId = btn.getAttribute('aria-controls');
+    const navLinks = document.getElementById(navId);
+    btn.addEventListener('click', () => {
+      const visible = navLinks.getAttribute('data-visible') === 'true';
+      navLinks.setAttribute('data-visible', String(!visible));
+      btn.setAttribute('aria-expanded', String(!visible));
+    });
+  });
+
+  // Theme switcher (compartido con index.html)
+  const themeButtons = document.querySelectorAll('.theme-swatch');
+  const root = document.documentElement;
+  const THEME_KEY = 'clarityspot_theme';
+
+  function applyTheme(name) {
+    root.setAttribute('data-theme', name);
+    themeButtons.forEach(btn => {
+      const pressed = btn.getAttribute('data-theme') === name;
+      btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    });
+  }
+
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved) applyTheme(saved);
+  else applyTheme(root.getAttribute('data-theme') || 'default');
+
+  themeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.getAttribute('data-theme');
+      applyTheme(name);
+      localStorage.setItem(THEME_KEY, name);
+    });
+  });
+</script>
+
+</body>
+</html>
