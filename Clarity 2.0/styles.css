@@ -15,16 +15,6 @@
   --container: 1100px;
 }
 
-/* Dark theme variables override */
-:root[data-theme="dark"], [data-theme="dark"] {
-  --bg: #0b0f14;
-  --text: #e6eef8;
-  --muted: #9aa6b2;
-  --brand-contrast: #0b0f14;
-  --brand-500: #2b9af3; /* fallback darker-tinted brand for visibility in dark */
-  --brand-400: #5fb6ff;
-  --accent: color-mix(in srgb, var(--brand-500) 60%, white 40%);
-  --card-shadow: 0 6px 20px rgba(2,6,23,0.6);
 }
 
 /* Reset / base */
@@ -122,26 +112,6 @@ body{
   transform: translateY(-1px);
 }
 
-/* Theme switcher */
-.theme-switcher{ display:inline-flex; gap:0.5rem; align-items:center; }
-.theme-swatch{
-  width:28px;
-  height:28px;
-  border-radius:8px;
-  border:2px solid rgba(0,0,0,0.06);
-  padding:0;
-  cursor:pointer;
-  background:transparent;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-}
-.theme-swatch[aria-pressed="true"]{
-  outline: 2px solid rgba(0,0,0,0.12);
-  transform: translateY(-2px);
-}
-
-/* Color indicators for swatches */
-.theme-swatch[data-theme="light"]{ background: linear-gradient(180deg, var(--brand), var(--brand-400)); }
-.theme-swatch[data-theme="dark"]{ background: linear-gradient(180deg, var(--brand-500), var(--brand-400)); border-color: rgba(255,255,255,0.06); }
 
 /* Nav toggle (mobile) */
 .nav-toggle{
