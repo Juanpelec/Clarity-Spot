@@ -137,22 +137,7 @@
     navToggle.setAttribute('aria-expanded', String(!visible));
   });
 
-  // Theme switcher (guarda preferencia en localStorage). Only light and dark themes.
-  const themeButtons = document.querySelectorAll('.theme-swatch');
-  const root = document.documentElement;
-  const THEME_KEY = 'clarityspot_theme';
-
-  function getSystemPreference() {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  function applyTheme(name) {
-    root.setAttribute('data-theme', name);
-    themeButtons.forEach(btn => {
-      const pressed = btn.getAttribute('data-theme') === name;
-      btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
-    });
-  }
+  
 
   // Initialize: saved -> system -> attribute -> light
   const saved = localStorage.getItem(THEME_KEY);
