@@ -191,28 +191,7 @@
     });
   });
 
-  // Theme switcher (compartido con index.html)
-  const themeButtons = document.querySelectorAll('.theme-swatch');
-  const root = document.documentElement;
-  const THEME_KEY = 'clarityspot_theme';
-
-  function applyTheme(name) {
-    root.setAttribute('data-theme', name);
-    themeButtons.forEach(btn => {
-      const pressed = btn.getAttribute('data-theme') === name;
-      btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
-    });
-  }
-
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved) applyTheme(saved);
-  else applyTheme(root.getAttribute('data-theme') || 'default');
-
-  themeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const name = btn.getAttribute('data-theme');
-      applyTheme(name);
-      localStorage.setItem(THEME_KEY, name);
+  
     });
   });
 </script>
@@ -220,5 +199,6 @@
 </body>
 
 </html>
+
 
 
