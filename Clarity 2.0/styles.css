@@ -383,3 +383,28 @@ body{
   .nav, .hero, .sub-hero, .footer, .buttons{ display:none !important; }
   .section{ padding: 0.5rem !important; }
 }
+
+
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+.new-price {
+  color: #e63946;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.badge-discount {
+  position: absolute;
+  background: #e63946;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  top: 10px;
+  left: 10px;
+}
